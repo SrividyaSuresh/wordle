@@ -4,10 +4,11 @@ import random
 import os
 
 # Download word repository
+url = 'https://raw.githubusercontent.com/dwyl/english-words/master/words.txt'
 if os.path.exists('words.txt'):
     words_repo = os.path.basename('words.txt')
 else:
-    words_repo = wget.download('https://raw.githubusercontent.com/dwyl/english-words/master/words.txt')
+    words_repo = wget.download(url)
 
 # Read words file
 oxford = pd.read_fwf(words_repo, header=None)
